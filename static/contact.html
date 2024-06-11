@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Contact - My Blog{% endblock %}
+{% block content %}
+    <section class="contact">
+        
+        <div style="text-align: center;">
+            <h2><b>আমার সাথে যোগাযোগ করুন</b></h2>
+          </div>
+          
+        <!-- <p>If you have any questions or just want to get in touch, feel free to reach out using the form below!</p> -->
+        
+        <form method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">নাম:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="আপনার নাম">
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">ই-মেইল:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="আপনার ই-মেইল">
+            </div>
+            
+            <div class="mb-3">
+                <label for="message" class="form-label">বার্তা:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="বার্তা লিখুন"></textarea>
+            </div>
+            
+            <!-- <button type="submit" class="btn btn-primary">সাবমিট</button> -->
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">সাবমিট</button>
+              </div>
+              
+        </form>
+    </section>
+{% endblock %}

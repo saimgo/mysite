@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}হোম{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="my-4"> সাম্প্রতিক পোস্টসমূহ</h1>
+    {% for post in posts %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.content[:200] }}...</p>
+                <p class="card-text"><small>By {{ post.author }}</small></p>
+                <!-- Display tags -->
+                
+                <a href="{{ url_for('post', post_id=post.id) }}" class="btn btn-primary"> আরও পড়ুন..&rarr;</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

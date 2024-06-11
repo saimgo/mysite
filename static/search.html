@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Search Results - LazyCoder{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">সার্চ ফলাফল সমূহ</h1>
+    <p class="lead">"{{ query }}" এর জন্য {{ posts|length }} ফলাফল পাওয়া গেছে </p>
+    <div class="list-group">
+        {% for post in posts %}
+        <a href="{{ url_for('post', post_id=post.id) }}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ post.title }}</h5>
+                <small>Author: {{ post.author }}</small>
+            </div>
+            <p class="mb-1">{{ post.content[:100] }}{% if post.content|length > 100 %}... <a href="{{ url_for('post', post_id=post.id) }}">Read More</a>{% endif %}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
